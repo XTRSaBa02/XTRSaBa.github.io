@@ -1,7 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ของฉัน</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .profile-header {
+            margin-bottom: 30px;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4CAF50;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 2.2em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .profile-details {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .profile-details p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-details p strong {
+            color: #4CAF50;
+            margin-right: 10px;
+            min-width: 80px; /* Adjust as needed */
+        }
+
+        .social-links {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #4CAF50;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #218838;
+        }
+
+        .social-links img {
+            width: 28px;
+            height: 28px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello pong</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/150/4CAF50/FFFFFF?text=Your+Photo" alt="รูปโปรไฟล์ของคุณ" class="profile-picture" id="profileImage">
+            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            <label for="imageUpload" style="cursor: pointer; color: #4CAF50; text-decoration: underline; font-size: 0.9em;">
+                คลิกเพื่อเปลี่ยนรูปภาพ
+            </label>
+            <h1>[ชื่อของคุณ] [นามสกุลของคุณ]</h1>
+            <p><strong>[คำอธิบายสั้นๆ เกี่ยวกับตัวคุณ, เช่น อาชีพ, ความสนใจ]</strong></p>
+        </div>
+
+        <div class="profile-details">
+            <p><strong>อีเมล:</strong> <a href="mailto:your.email@example.com">[your.email@example.com]</a></p>
+            <p><strong>ที่อยู่:</strong> [จังหวัด, ประเทศ]</p>
+            <p><strong>โทรศัพท์:</strong> [08X-XXX-XXXX]</p>
+            <p><strong>เกี่ยวกับฉัน:</strong> [เขียนรายละเอียดเพิ่มเติมเกี่ยวกับตัวคุณ เช่น ความสนใจ งานอดิเรก ทักษะ หรือสิ่งที่คุณต้องการให้คนอื่นรู้]</p>
+        </div>
+
+        <div class="social-links">
+            <h2>ช่องทางโซเชียล</h2>
+            <a href="https://www.facebook.com/yourprofile" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn"> LinkedIn
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"> Instagram
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Twitter_bird_logo_2012.svg" alt="Twitter"> X (Twitter)
+            </a>
+            </div>
+    </div>
+
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const [file] = event.target.files;
+            if (file) {
+                document.getElementById('profileImage').src = URL.createObjectURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
